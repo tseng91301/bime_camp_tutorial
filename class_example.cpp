@@ -6,11 +6,11 @@ class Complex
         double realPart;
         double imaginaryPart;
     public:
-        void assignNewValues(double real, double imag){
+        void assignNewValues(double real, double imag){ // 賦予此Complex一個值
             realPart = real;
             imaginaryPart = imag;
         }
-        Complex(){}
+        Complex(){} // Implementation function
         Complex(double real, double imag){
             assignNewValues(real, imag);
         }
@@ -21,8 +21,8 @@ class Complex
                 cout << "The complex number is " 
                      << realPart << ' ' << sign << ' ' << abs(imaginaryPart) << "i\n";
         }
-        Complex operator+(const Complex&);  // prototype for the addition operator
-        Complex operator-(const Complex& complex2){
+        Complex operator+(const Complex&);  // 將加法的運算子overload(讓Complex相加變得有意義)
+        Complex operator-(const Complex& complex2){ // 與上述相同
             Complex temp;
             temp.realPart = realPart - complex2.realPart;
             temp.imaginaryPart = imaginaryPart - complex2.imaginaryPart;
@@ -30,8 +30,7 @@ class Complex
         }
         
 };
-Complex Complex::operator+(const Complex& complex2)
-{
+Complex Complex::operator+(const Complex& complex2){ // class function 也可以放在外面，但要加上 <class name>::
     Complex temp;
     temp.realPart = realPart + complex2.realPart;
     temp.imaginaryPart = imaginaryPart + complex2.imaginaryPart;
@@ -39,15 +38,14 @@ Complex Complex::operator+(const Complex& complex2)
 }
 int main()
 {
-    Complex a, b, c(6.8,9.7);  // declare 3 objects
-    // Assign new values to object b's data members
-    b.assignNewValues(5.3, -8.4);
-    a.showComplexValues();   // display object a's values
-    b.showComplexValues();   // display object b's values
-    c.showComplexValues();   // display object c's values
+    Complex a, b, c(6.8,9.7);  // 宣告a, b, c三個Complex
+    b.assignNewValues(5.3, -8.4); // 賦予 b 一個新值
+    a.showComplexValues();
+    b.showComplexValues();
+    c.showComplexValues();
 
-    Complex add_c = b + c;
-    Complex sub_c = b - c;
+    Complex add_c = b + c; // 執行operator+的功能
+    Complex sub_c = b - c; // 執行operator-的功能
     add_c.showComplexValues();
     sub_c.showComplexValues();
     return 0;
