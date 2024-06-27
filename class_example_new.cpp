@@ -32,7 +32,9 @@ public:
 
 
     // Implementation function
-    Fraction(int num, int denom) : numerator(num), denominator(denom) {
+    Fraction(int num, int denom) {
+        numerator = num;
+        denominator = denom;
         if (denominator == 0) { // 如果分母 = 0 時
             throw invalid_argument("Denominator cannot be zero"); // throw 出一個 Denominator cannot be zero 的錯誤訊息
         }
