@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
 int main(){
     vector<int> scores; // 宣告一個vector並指定存放的資料型態為int

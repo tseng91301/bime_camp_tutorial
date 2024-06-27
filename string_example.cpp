@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<cstring>
 using namespace std; // 使用std命名空間
 int main(){
     string s1 = "abc"; // 指定s1是"abc"
