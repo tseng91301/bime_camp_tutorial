@@ -1,4 +1,4 @@
-/*這個程式碼是6小隊輔的「阿瑋」教我的，他是修過資工系DSA課程的大電神*/
+/*這個程式碼是6小隊輔「阿瑋」教我的，他是修過資工系DSA課程的大電神*/
 #include<iostream>
 using namespace std;
 int main(){
